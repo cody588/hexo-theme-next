@@ -35,7 +35,7 @@
                 alt="{{ theme.author }}" />
             {% endif %}
               <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
-              <p class="site-description motion-element" itemprop="description">{#
+              <p class="site-description motion-element" itemprop="description">{{theme.description}}{#
             #}{% if theme.seo %}{#
               #}{{ theme.signature }}{#
             #}{% else %}{#
@@ -87,27 +87,27 @@
             <div class="feed-link motion-element">
               <a href="{{ url_for(theme.rss) }}" rel="alternate">
                 <i class="fa fa-rss"></i>
-                RSS
-              </a>
+                 RSS
+	      </a>
             </div>
           {% endif %}
 
-          {% if theme.social %}
-            <div class="links-of-author motion-element">
-                {% for name, link in theme.social %}
-                  <span class="links-of-author-item">
-                    <a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}">
-                      {% if theme.social_icons.enable %}
-                        <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
+          <div class="links-of-author motion-element">
+            {% if theme.social %}
+              {% for name, link in theme.social %}
+                <span class="links-of-author-item">
+                  <a href="{{ link.split('||')[0] | trim }}" target="_blank" title="{{ name }}">
+                    {% if theme.social_icons.enable %}
+                      <i class="fa fa-fw fa-{{ link.split('||')[1] | trim | default('globe') }}"></i>{#
+                  #}{% endif %}{#
+                    #}{% if not theme.social_icons.icons_only %}{#
+                      #}{{ name }}{#
                     #}{% endif %}{#
-                      #}{% if not theme.social_icons.icons_only %}{#
-                        #}{{ name }}{#
-                      #}{% endif %}{#
-                  #}</a>
-                  </span>
-                {% endfor %}
-            </div>
-          {% endif %}
+                #}</a>
+                </span>
+              {% endfor %}
+            {% endif %}
+          </div>
 
           {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
           {% if theme.creative_commons in cc %}

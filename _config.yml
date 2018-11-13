@@ -1,18 +1,9 @@
-# ===============================================================
-# ========================= ATTENTION! ==========================
-# ===============================================================
-# NexT repository is moving here: https://github.com/theme-next
-# ===============================================================
-# It's rebase to v6.0.0 and future maintenance will resume there
-# ===============================================================
-
 # ---------------------------------------------------------------
 # Theme Core Configuration Settings
 # ---------------------------------------------------------------
-
 # Set to true, if you want to fully override the default configuration.
 # Useful if you don't want to inherit the theme _config.yml configurations.
-override: false
+override: true
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -26,7 +17,7 @@ override: false
 
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
-favicon:
+favicon: 
   small: /images/favicon-16x16-next.png
   medium: /images/favicon-32x32-next.png
   apple_touch_icon: /images/apple-touch-icon-next.png
@@ -35,32 +26,32 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "Cryptography,Blockchain"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss: /atom.xml
 
 footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
-  #since: 2015
+  since: 2016
 
   # Icon between year and copyright info.
-  icon: user
+  icon: heart
 
   # If not defined, will be used `author` from Hexo main config.
-  copyright:
+  copyright: 
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: true
+  powered: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
   #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
@@ -75,7 +66,7 @@ footer:
 canonical: true
 
 # Change headers hierarchy on site-subtitle (will be main site description) and on all post/pages titles for better SEO-optimization.
-seo: false
+seo: true
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
@@ -93,17 +84,20 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
-  #tags: /tags/ || tags
-  #categories: /categories/ || th
-  archives: /archives/ || archive
-  #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  #categories: /categories
+  tags: /tags || tags
+  archives: /archives || archive
+  about: /about || user
+  # schedule: /schedule
+  #sitemap: /sitemap.xml
+  essay: /categories/专栏 || star
 
 # Enable/Disable menu icons.
 menu_icons:
   enable: true
+
+
+
 
 
 # ---------------------------------------------------------------
@@ -126,8 +120,8 @@ scheme: Muse
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
+social:
+  GitHub: https://github.com/cody588 || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -137,24 +131,26 @@ scheme: Muse
   #YouTube: https://youtube.com/yourname || youtube
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
+  # 微博: https://weibo.com/u/2219770162 || weibo
 
 social_icons:
   enable: true
   icons_only: false
   transition: false
-
+  
 # Blog rolls
-links_icon: link
-links_title: Links
-links_layout: block
+#links_icon: link
+#links_title: 友情链接
+#links_layout: block
 #links_layout: inline
 #links:
-  #Title: http://example.com/
+#Title: http://example.com/
 
 # Sidebar Avatar
-# in theme directory(source/images): /images/avatar.gif
-# in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+# in theme directory(source/images): /images/avatar.jpg
+# in site  directory(source/uploads): /uploads/avatar.jpg
+avatar: /images/avatar.jpg
+
 
 # Table Of Contents in the Sidebar
 toc:
@@ -174,7 +170,7 @@ toc:
 
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
-  position: left
+  position: right
   #position: right
 
   # Sidebar Display, available value (only for Muse | Mist):
@@ -182,9 +178,9 @@ sidebar:
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
+  # display: post
   #display: always
-  #display: hide
+  display: hide
   #display: remove
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
@@ -193,11 +189,12 @@ sidebar:
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
 
-  # Scroll percent label in b2t button.
-  scrollpercent: false
+  # Scroll percent label in b2t button
+  scrollpercent: true
+
 
   # Enable sidebar on narrow view (only for Muse | Mist).
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
@@ -208,7 +205,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
@@ -216,7 +213,7 @@ excerpt_description: true
 # Automatically Excerpt. Not recommend.
 # Please use <!-- more --> in the post to control excerpt accurately.
 auto_excerpt:
-  enable: false
+  enable: true
   length: 150
 
 # Post meta display settings
@@ -229,11 +226,11 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
-  item_text: true
+  item_text: false
   wordcount: false
   min2read: false
   totalcount: false
-  separated_meta: true
+  separated_meta: false
 
 # Wechat Subscriber
 #wechat_subscriber:
@@ -249,7 +246,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -259,7 +256,7 @@ post_copyright:
 # ---------------------------------------------------------------
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Android Chrome header panel color ($black-deep).
 android_chrome_color: "#222"
@@ -277,7 +274,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night
 
 
 # ---------------------------------------------------------------
@@ -293,10 +290,10 @@ highlight_theme: normal
 # Arial | Tahoma | Helvetica | Times New Roman | Courier New | Verdana | Georgia | Palatino | Garamond | Comic Sans MS | Trebuchet MS
 # ---------------------------------------------------------------
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host:
+  host: //fonts.cat.net
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -306,34 +303,36 @@ font:
   # Global font settings used on <body> element.
   global:
     external: true
-    family: Lato
-    size:
+    family: Roboto Slab
+    size: 16px
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6).
   # Fallback to `global` font settings.
   headings:
     external: true
     family:
-    size:
+    size: 
 
   # Font settings for posts.
   # Fallback to `global` font settings.
   posts:
     external: true
-    family:
+    family: Roboto Slab
 
   # Font settings for Logo.
   # Fallback to `global` font settings.
   logo:
     external: true
-    family:
+    family: Lobster Two
     size:
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
-    size:
+    family: PT Mono
+    size: 16px
+
+
 
 
 # ---------------------------------------------------------------
@@ -342,18 +341,18 @@ font:
 
 # MathJax Support
 mathjax:
-  enable: false
-  per_page: false
+  enable: true
+  per_page: true
   cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
 
 # Han Support docs: https://hanzi.pro/
 han: false
 
 # Swiftype Search API Key
-#swiftype_key:
+swiftype_key: 
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: b0339818ee7d3ca09ef6f121603241e1
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -367,6 +366,8 @@ disqus:
 # Hypercomments
 #hypercomments_id:
 
+# Gentie productKey
+#gentie_productKey: ab25f03b76f745679d8e34f72217e141
 # changyan
 changyan:
   enable: false
@@ -395,7 +396,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid: 
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -485,11 +486,11 @@ needmoreshare2:
 # Make duoshuo show UA
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
-duoshuo_info:
-  ua_enable: true
-  admin_enable: false
-  user_id: 0
-  #admin_nickname: Author
+# duoshuo_info:
+  # ua_enable: true
+  # admin_enable: true
+  # user_id: 11339369
+  # admin_nickname: Author
 
 # Post widgets & FB/VK comments settings.
 # ---------------------------------------------------------------
@@ -532,8 +533,8 @@ rating:
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
   enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  app_id: 
+  app_key: 
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
@@ -628,8 +629,8 @@ note:
   #  - modern    bs-callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
-  icons: false
+  style: modern
+  icons: true
   border_radius: 3
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
@@ -675,7 +676,7 @@ motion:
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce
